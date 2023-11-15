@@ -1,0 +1,51 @@
+<div class="row">
+<div class="col">
+    <h4 class="text-right">Hola {{usuario}}! <a href="/admin/login/logout" class="btn btn-sm btn-danger">Cerrar Sesión<i class="fa fa-sign-out"></i></a></h4>
+</div>
+</div>
+
+<div class="row">
+<div class="col-7">
+<h3>projects</h3>
+</div>
+<div class="col-2 text-right">
+<a href="/projects/agregar" class="btn btn-success"><i class="fa fa-plus"></i>Nuevo</a>
+</div>
+</div>
+
+<div class="row">
+<div class="col">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr class="cabezalista">
+                <th class="oculto" scope="col">#</th>
+                <th scope="col">Título</th>
+                <th scope="col">Cuerpo</th>
+                <th scope="col">Enlace</th>
+                <th scope="col">Imagen</th>
+                <th scope="col" class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each projects}}
+            <tr class="lista">
+                <th class="oculto" scope="row">{{id}}</th>
+                <td>{{titulo}}</td>
+                <td>{{cuerpo}}</td>
+                <td>{{{enlace}}}</td>
+                <td>{{{imagen}}}</td>
+                <td class="text-center">
+                    <a href="/projects/modificar/{{id}}" class="btn btn-sm btn-secondary">
+                        <i class="bi bi-pencil-square" style="font-size: 1rem;"></i>
+                    </a>
+                    <br>
+                    <a href="/projects/eliminar/{{id}}" class="btn btn-sm btn-secondary">
+                        <i class="bi bi-trash" style="font-size: 1rem;"></i>
+                    </a>
+                </td>
+            </tr> 
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+</div>

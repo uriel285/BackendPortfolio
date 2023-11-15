@@ -1,0 +1,34 @@
+<div class="container" style="margin:50px auto">
+<div class="row">
+    <div class="col-6 offset-3">
+        <h4>Modificar el Comentario</h4>
+        <form action="/projects/modificar" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="{{projects.id}}" name="id">
+        <div class="form-group">
+            <input type="text" placeholder="Título" value="{{projects.titulo}}" class="form-control" name="titulo">
+        </div>
+        <div class="form-group">
+            <textarea name='enlace' class="form-control" placeholder="Enlace">{{projects.enlace}}</textarea>
+        </div>
+        <div class="form-group">
+            <textarea name="cuerpo" class="form-control" placeholder="Cuerpo">{{projects.cuerpo}}</textarea>
+        </div>
+        <div class="form-group">
+            <p>
+                <label>Imagen: <input type="file" name="img" id="img"></label>
+            </p>
+            <p>
+                <label><input type="checkbox" name="img_delete" id="img_delete" value="1">Eliminar imagen actual?</label></input>
+                <input type="hidden" name="img_original" value="{{projects.img_id}}">
+
+            </p>
+        </div>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+        </form>
+    </div>
+</div>
+</div>
+
+{{#if error}}
+<h5>{{message}}</h5>
+{{/if}}

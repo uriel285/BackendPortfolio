@@ -1,0 +1,27 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Agregar un Proyecto</h4>
+            <form action="/projects/agregar" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Título" name="titulo">
+                </div>
+                <div class="form-group">
+                    <textarea type="text" name="cuerpo" class="form-control" placeholder="Cuerpo"></textarea>
+                </div>
+                <div class="form-group">
+                    <textarea type="text" name="enlace" class="form-control" placeholder="Enlace"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Imagen: <input type="file" name="imagen" id="imagen"></label>
+                </div>
+                <input type="hidden" name="img_id">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{#if error}}
+<h5>{{message}}</h5>
+{{/if}}

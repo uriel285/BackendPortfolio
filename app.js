@@ -108,4 +108,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+  process.exit(1);
+});
+
 module.exports = app;
